@@ -1,0 +1,25 @@
+{
+  "name": "bluetooth-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serial": "ts-node serial.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/noble": "0.0.39",
+    "async": "^3.0.0",
+    "noble": "^1.9.1",
+    "ts-node": "^8.2.0",
+    "xpc-connection": "sandeepmistry/node-xpc-connection#pull/26/head"
+  },
+  "resolutions": {
+    "xpc-connection": "sandeepmistry/node-xpc-connection#pull/26/head"
+  },
+  "devDependencies": {
+    "typescript": "^3.4.5"
+  }
+}
