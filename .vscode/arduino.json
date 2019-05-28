@@ -1,0 +1,6 @@
+{
+    "board": "arduino:avr:pro",
+    "configuration": "cpu=8MHzatmega328",
+    "sketch": "bluetooth_serial/bluetooth_serial.ino",
+    "port": "/dev/cu.usbserial-A506P99U"
+}
