@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "serial": "ts-node serial.ts",
+    "battery": "ts-node battery.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -13,6 +14,7 @@
     "@types/noble": "0.0.39",
     "async": "^3.0.0",
     "noble": "^1.9.1",
+    "rxjs": "^6.5.2",
     "ts-node": "^8.2.0",
     "xpc-connection": "sandeepmistry/node-xpc-connection#pull/26/head"
   },
