@@ -59,14 +59,21 @@ class Blue3 {
           peripheral.id
         }`,
       );
-      // connect to the peripheral
+
+      const timestamp = new Date().getTime() / 1000;
+      const requestBuffer = Buffer.allocUnsafe(5);
+      requestBuffer.writeUInt8(0x07, 0);
+      requestBuffer.writeUInt32BE(timestamp, 1);
+
+      // Get device events, name and set time
       this.fetch(
         peripheral,
         this.handleServicesAndCharacteristicsDiscovered,
-        Buffer.from('03', 'hex'), // Request events and name
+        requestBuffer,
         this.handleNameMessage,
       );
     } else {
+      // Get device events
       this.fetch(
         peripheral,
         this.handleServicesAndCharacteristicsDiscovered,
@@ -123,6 +130,10 @@ class Blue3 {
 
   private handleNameMessage = (message: any) => {
     console.log('Correctly found device name ', message);
+  };
+
+  private handleSetTimeMessage = (message: any) => {
+    console.log('Correctly set device time ', message);
   };
 
   private handleServicesAndCharacteristicsDiscovered = <T>(
